@@ -2,15 +2,20 @@ import React from 'react'
 // import logo from './logo.svg'
 // import '../App.css'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import { Landing } from './components/Landing'
+// import { Landing } from './components/Landing'
+import { Landing, Header, MainBoard } from './components'
 
-require('../App.css');
+require('../App.css')
 
 function App () {
   return (
     <div>
       <Router>
-        <Route path='/' component={Landing} />
+        <Route exact path='/' component={Landing} />
+        <Switch>
+          <Header />
+          <Route path='/main' component={MainBoard} />
+        </Switch>
       </Router>
     </div>
     // <div className="App">

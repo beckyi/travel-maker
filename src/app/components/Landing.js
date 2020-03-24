@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 // import immer from 'immer'
 import styled from 'styled-components'
 import door from '../../styles/svg/door.svg'
@@ -29,16 +30,16 @@ const SquareTitle = styled.section`
 
 const LogoTitle = styled.div`
   position: relative;
-  width: 450px;
-  height: 200px;
-  margin: 150px auto;
+  /*width: 450px;*/
+  /*height: 200px;*/
+  margin: 198px auto;
   font-family: Signika;
   font-style: normal;
   font-weight: bold;
   font-size: 80px;
   line-height: 99px;
   text-align: center;
-  letter-spacing: 3px;
+  /*letter-spacing: 3px;*/
   color: #ffffff;
   text-shadow: 0px 0px 14px rgba(0, 0, 0, 0.75);
 `
@@ -47,12 +48,25 @@ const SVGICON = styled.div`
   position: absolute;
   right: 10px;
   top: 9px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
-export const Landing = () => {
+const Landing = () => {
+  const [steps, setSteps] = useState(0)
+
+  let handleOnClick = (e, a) => {
+    console.log(a, 'handleOnClick ? >', e, steps)
+    debugger
+    setSteps(steps => steps + 1)
+    return false // stop both caturing and bubling (preventDefault, stopPropagation)
+  }
+
   return (
     <WrapBackGround>
-      <SVGICON>
+      <SVGICON onClick={handleOnClick}>
+        <Link to='/main' />
         <svg
           width='30px'
           height='35px'
@@ -72,3 +86,5 @@ export const Landing = () => {
     </WrapBackGround>
   )
 }
+
+export default Landing
