@@ -65,8 +65,8 @@ const Landing = () => {
 
   return (
     <WrapBackGround>
+      <Link to='/main'>
       <SVGICON onClick={handleOnClick}>
-        <Link to='/main' />
         <svg
           width='30px'
           height='35px'
@@ -80,6 +80,7 @@ const Landing = () => {
           />
         </svg>
       </SVGICON>
+      </Link>
       <SquareTitle>
         <LogoTitle>Travel Maker</LogoTitle>
       </SquareTitle>

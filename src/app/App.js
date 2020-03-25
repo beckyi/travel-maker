@@ -15,6 +15,7 @@ function App () {
         <Switch>
           <Header />
           <Route path='/main' component={MainBoard} />
+          <Route path='/main2' component={MainBoard} />
         </Switch>
       </Router>
     </div>
