@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "es6-promise": "^4.2.8",
-    "immer": "^6.0.1",
+    "immer": "^8.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
